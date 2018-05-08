@@ -14,7 +14,7 @@
 #include <cmath>
 using namespace std;
 
-int num_items_in_store = 208; //Number of products
+int num_items_in_store = 209; //Number of products
 
 struct ProductData{
     int ProductID; //Numerical ID
@@ -84,8 +84,6 @@ int main() {
 	return 0;
 }
 
-
-
 void PrintInventory(ProductData arr[]){
 	cout << left << setw(10) << "ID" << right << setw(20) << "Name" << right << setw(20) << "Number of Units" << right << setw(20) << "Cost (each)" << right << setw(20) << "Size (each)" << "\n";
 	for (int i=0;i<num_items_in_store;i++){
@@ -104,8 +102,6 @@ void PrintID(ProductData arr[], int x){
 int knapSack(int W, int wt[], int val[], int n){
    int i, w;
    int K[n+1][W+1];
-
-   // Build table K[][] in bottom up manner
    for (i = 0; i <= n; i++){
        for (w = 0; w <= W; w++){
            if (i==0 || w==0)
@@ -116,7 +112,6 @@ int knapSack(int W, int wt[], int val[], int n){
                  K[i][w] = K[i-1][w];
        }
    }
-
    return K[n][W];
 }
 
